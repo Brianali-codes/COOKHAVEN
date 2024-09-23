@@ -71,7 +71,7 @@ export default function InputSection() {
         ) : (
             <>
             <div className='SrcFood'>
-                <p>No meal found. Please try a different search term.</p>
+                <p className='text-black dark:text-white'>No meal found. Please try a different search term.</p>
             </div>
             
             </>

@@ -6,7 +6,7 @@ function Footer(){
         <div className="foot flex flex-row justify-center gap-7 dark:bg-black " id="FOOTER">
             <div className="flex flex-col justify-center items-center dark:bg-black">
                 <p className="RCP dark:text-white">ABOUT</p>
-                <p className="RCP dark:text-white">RECIPE</p>
+                <p className="RCP dark:text-white">COOK</p>
                 <p className="RCP dark:text-white">HAVEN.</p>
             </div>
             <div className="flex flex-col justify-center items-start w-3/6 dark:bg-black p-5" id='FT2'>
