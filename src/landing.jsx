@@ -1,5 +1,5 @@
 import VID from './assets/video1.mp4'
-import Post from './assets/food.png'
+import Post from './assets/food.webp'
 
 
 function LandingPage(){
