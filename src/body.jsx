@@ -38,18 +38,8 @@ const MealComponent = () => {
 
   return (
     <>
-      <div className='flex flex-col justify-start p-7  dark:text-white text-black dark:bg-black bg-white'>
-        <div>
-        <a href="#page">
-          <p className='h10'>Random Recipe.</p>
-        </a>
-        </div>
-        <div className='flex flex-col'>
-          <p className='h10'>Search Recipe.</p>
-        </div>
-      </div>
-
-      <div id="page" className='flex flex-row justify-center items-center border-solid border-2 border-gray-200 p-5 m-5 rounded-xl gap-5 bg-white dark:bg-black text-black dark:text-white'>
+    
+      <div id="page" className='flex flex-row justify-center items-center border-solid border-2 border-gray-200 p-5 m-5 rounded-xl gap-5 bg-white dark:bg-black text-black dark:text-white dark:border-gray-50'>
         
         {meal ? (
           <>

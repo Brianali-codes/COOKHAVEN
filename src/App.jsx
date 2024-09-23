@@ -13,8 +13,8 @@ function App() {
         <Navbar/>
         <Navbar2/>
         <LandingPage/>
-        <MealComponent/>
         <InputSection/>
+        <MealComponent/>  
         <Footer/>
     </div>
     
