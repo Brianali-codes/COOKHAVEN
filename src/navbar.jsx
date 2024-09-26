@@ -1,18 +1,22 @@
 import Logo from './assets/logo.png'
 import DM from './assets/night-mode.png'
 import React, { useState, useEffect } from 'react';
+import LM from './assets/light-mode.png'
 import './index.js'
+import { useRef } from 'react';
 
 export default function Navbar(){
 
     const [darkMode, setDarkMode] = useState(false);
-
+    const myRef = useRef();
   // Effect to apply or remove the 'dark' class on the <html> element
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add('dark');
+      myRef.current.src = LM
     } else {
       document.documentElement.classList.remove('dark');
+      myRef.current.src = DM
     }
   }, [darkMode]);
 
@@ -27,7 +31,7 @@ export default function Navbar(){
             <a href="#FOOTER"><button className='bg-white dark:bg-transparent text-black dark:text-white dark:hover:text-black'>About</button></a> 
             <a href="https://github.com/gamerfunky78" target='_blank'><button className='bg-white dark:bg-transparent text-black dark:text-white dark:hover:text-black'>Github</button></a>
         </div>
-        <img src={DM} alt="DarkMode" className='w-10 dark:bg-black' id='DM' onClick={() => setDarkMode(!darkMode)} />
+        <img src={DM} alt="DarkMode" className='w-10 dark:bg-black' id='DM' onClick={() => setDarkMode(!darkMode)} ref={myRef} />
     </div>
 
 
