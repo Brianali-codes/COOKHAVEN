@@ -102,11 +102,30 @@ html{
   transition: 0.5s;
   cursor: pointer;
 }
+#page{
+  position: relative;
+}
+.random{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  border: solid 1px black ;
+  padding: 10px;
+  font-family: Kanit, monospace;
+  transition: 0.5s;
+}
+.random:hover{
+  background-color: rgb(175, 175, 175);
+  transition: 0.5s;
+}
 @media (max-width:768px){
   #page{
     display: flex;
     flex-direction: column;
     gap: 20px;
+    position: relative;
   }
   #B-C button{
     font-size: 15px;
@@ -165,6 +184,10 @@ html{
     text-align: center;
     justify-content: center;
     align-items: center;
+  }
+  #thumbnail2{
+    width: 300px;
+    height: 300px;
   }
 }
 

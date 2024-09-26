@@ -4,19 +4,20 @@ const MealComponent = () => {
   const [meal, setMeal] = useState(null);
   const randomizeUrl = 'https://www.themealdb.com/api/json/v1/1/random.php';
 
+  const getMeal = async () => {
+    try {
+      let response = await fetch(randomizeUrl);
+      let data = await response.json();
+      let finalMeal = data.meals[0];
+
+      setMeal(finalMeal); // Store the meal data in the state
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // Fetch meal on initial render
   useEffect(() => {
-    const getMeal = async () => {
-      try {
-        let response = await fetch(randomizeUrl);
-        let data = await response.json();
-        let finalMeal = data.meals[0];
-
-        setMeal(finalMeal); // Store the meal data in the state
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
     getMeal();
   }, []);
 
@@ -38,7 +39,6 @@ const MealComponent = () => {
 
   return (
     <>
-    
       <div id="page" className='flex flex-row justify-center items-center border-solid border-2 border-gray-200 p-5 m-5 rounded-xl gap-5 bg-white dark:bg-black text-black dark:text-white dark:border-gray-50'>
         
         {meal ? (
@@ -47,8 +47,14 @@ const MealComponent = () => {
               <p className='RCP'>TODAYS RANDOM </p>
               <p className='RCP'>RECIPE </p>
               <img src={meal.strMealThumb} alt={meal.strMeal} id='thumbnail1'/>
-              
             </div>
+
+            <button 
+              className='random text-black dark:text-white bg-white dark:bg-black border-black dark:border-white' 
+              onClick={getMeal}  // Call getMeal on button click
+            >
+              RANDOM RECIPE
+            </button>
 
             <div className='w-4/6 flex flex-col justify-start items-start text-black dark:text-white bg-white dark:bg-black' id='row2'>
               <h1 className='MealName'>Name: {meal.strMeal}</h1>
@@ -74,8 +80,7 @@ const MealComponent = () => {
               <p id='instructions'>{meal.strInstructions}</p>
             </div>
           </>
-        )
-         : (
+        ) : (
           <p id='loadr'>LOADING...</p>
         )}
       </div>
@@ -84,4 +89,3 @@ const MealComponent = () => {
 };
 
 export default MealComponent;
-

@@ -68,14 +68,17 @@ export default function InputSection() {
                     <p className='MealName dark:text-white text-black'><strong className='MealName'>Instructions:</strong> {mealData.strInstructions}</p>
                 </div>
             </div>
-        ) : (
+        )
+        :
+        (
             <>
             <div className='SrcFood'>
                 <p className='text-black dark:text-white'>No meal found. Please try a different search term.</p>
             </div>
             
             </>
-        )}
+        )
+        }
 
         </>
     );
