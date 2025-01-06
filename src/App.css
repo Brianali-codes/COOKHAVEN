@@ -7,6 +7,9 @@
     transform: rotate(360deg);
   }
 }
+body::-webkit-scrollbar {
+  display: none; 
+}
 html{
   scroll-behavior: smooth;
 }
